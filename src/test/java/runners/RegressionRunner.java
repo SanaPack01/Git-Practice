@@ -7,8 +7,13 @@ import org.junit.runner.RunWith;
     features = {"classpath:resources.features"},
         glue = {"step_definitions"},
         tags = {"@Transactions"},
-        plugin = {"json:target/cucumber.json"},
-        format = {"pretty","html:target/reports",}
+        plugin = "json:target/cucumber.json",
+        format = {"pretty",
+                "html:target/cucumber-reports/cucumber-pretty",
+                "json:target/cucumber-reports/CucumberTestReport.json",
+                "return:target/cucumber-reports/return.txt"
+        },
+        dryRun = false
 
 
 )
